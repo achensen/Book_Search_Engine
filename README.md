@@ -4,7 +4,6 @@
 ## Table of Contents
 * [Description](#description)
 * [License](#license)
-* [Installation](#installation)
 * [Usage](#usage)
 * [Deployed Site](#deployed-site)
 * [Contributions](#contributions)
@@ -17,8 +16,8 @@ A saved user book list with login, powered by a googlebooks api.
 ## License
 This project is licensed with MIT
 
-## Installation 
-npm i
+## Deployed Site 
+[Render Deployment](https://book-search-engine-sptn.onrender.com)
 
 ## Usage
 The main page will load, click on the _signup_ in the upper right hand corner to create a login.
@@ -36,9 +35,6 @@ To delete a book from your list select the _Delete this Book!_ button under the 
 In the example below all titles have been removed from the list, you can now select seach for books in the upper tight corner and start the process over. 
 ![all books deleted](/client/assets/images/NoSavedBooks.png)
 
-
-## Deployed Site 
-[Render Deployment](https://book-search-engine-sptn.onrender.com)
 
 ## Contributions
 EDX Starter code, myself, with some tutoring assistance (see additional notes)
