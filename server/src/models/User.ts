@@ -10,7 +10,7 @@ export interface UserDocument extends Document {
   username: string;
   email: string;
   password: string;
-  savedBooks?: BookDocument[];
+  savedBooks: BookDocument[];
   isCorrectPassword(password: string): Promise<boolean>;
   bookCount: number;
 }
@@ -33,7 +33,9 @@ const userSchema = new Schema<UserDocument>(
       required: true,
     },
     // set savedBooks to be an array of data that adheres to the bookSchema
-    savedBooks: [bookSchema],
+    savedBooks: {
+      type: [bookSchema], 
+      default:[]},
   },
   // set this to use virtual below
   {
@@ -59,7 +61,7 @@ userSchema.methods.isCorrectPassword = async function (password: string) {
 };
 
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-userSchema.virtual('bookCount').get(function () {
+userSchema.virtual('bookCount').get(function (this:UserDocument) {
   return this.savedBooks.length;
 });
 
